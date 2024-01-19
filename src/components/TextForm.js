@@ -32,8 +32,8 @@ export default function TextForm(props) {
         </div>
         <div className="container my-2">
             <h2>Your Text summary</h2>
-            <p>{text.split(/[ ]+/).filter((a1)=>{return a1.length!==0}).length} words,{text.length} characters</p>
-            <p>{text.split(/[ ]+/).filter((a1)=>{return a1.length!==0}).length *0.008} Minutes to read if 125 wpm</p>
+            <p>{text.split(/\s+/).filter((a1)=>{return a1.length!==0}).length} words,{text.length} characters</p>
+            <p>{text.split(/\s+/).filter((a1)=>{return a1.length!==0}).length *0.008} Minutes to read if 125 wpm</p>
             <h2>Preview</h2>
             <p>{text.length>0?text:'Enter Something to Preview'}</p>
         </div>
