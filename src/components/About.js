@@ -5,19 +5,21 @@ export default function About() {
         color: 'white',
         backgroundColor: 'black'
     })
-
+    const [btnText,setBtnText] = useState("Enable DarkMode")
     const darkMode = () =>{
         if(mystyle.color === 'white'){
             setStyle({
                 color: 'black',
                 backgroundColor: 'white'
             })
+            setBtnText("Enable DarkMode")
         }
         else{
             setStyle({
                 color: 'white',
                 backgroundColor: 'black'
             })
+            setBtnText("Enable LightMode")
         }
     }
   return (
@@ -62,7 +64,7 @@ export default function About() {
             </div>
         </div>
         <div className="container my-3">
-            <button onClick={darkMode} type="button" className="btn btn-primary my-2">Enable DarkMode</button>
+            <button onClick={darkMode} type="button" className="btn btn-primary my-2">{btnText}</button>
         </div>
     </div>
   )
