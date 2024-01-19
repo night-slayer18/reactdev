@@ -41,11 +41,11 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <Navbar title="Props" aboutText="About" mode={mode} toggleMode={toggleMode}/>
-      <Alert alert={alert}/>
+        <Navbar title="Props" aboutText="About" mode={mode} toggleMode={toggleMode}/>
+        <Alert alert={alert}/>
         <Routes>
-          <Route path="/" element={<TextForm heading="Enter your text to analyze below" showAlert={showAlert}/>} />
-          <Route path="/about" element={<About/>} />
+          <Route exact path="/" element={<TextForm heading="Enter your text to analyze below" showAlert={showAlert} mode={mode}/>} />
+          <Route exact path="/about" element={<About mode={mode}/>} />
         </Routes>
       </BrowserRouter>
     </>

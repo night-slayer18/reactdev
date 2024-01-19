@@ -1,29 +1,35 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-export default function About() {
-    const [mystyle,setStyle] = useState({
-        color: 'white',
-        backgroundColor: 'black'
-    })
-    const [btnText,setBtnText] = useState("Enable DarkMode")
-    const darkMode = () =>{
-        if(mystyle.color === 'white'){
-            setStyle({
-                color: 'black',
-                backgroundColor: 'white'
-            })
-            setBtnText("Enable DarkMode")
-        }
-        else{
-            setStyle({
-                color: 'white',
-                backgroundColor: 'black'
-            })
-            setBtnText("Enable LightMode")
-        }
+export default function About(props) {
+    // const [mystyle,setStyle] = useState({
+    //     color: 'white',
+    //     backgroundColor: 'black'
+    // })
+    // const [btnText,setBtnText] = useState("Enable DarkMode")
+    // const darkMode = () =>{
+    //     if(mystyle.color === 'white'){
+    //         setStyle({
+    //             color: 'black',
+    //             backgroundColor: 'white'
+    //         })
+    //         setBtnText("Enable DarkMode")
+    //     }
+    //     else{
+    //         setStyle({
+    //             color: 'white',
+    //             backgroundColor: 'black'
+    //         })
+    //         setBtnText("Enable LightMode")
+    //     }
+    // }
+
+    let mystyle = {
+        color: props.mode==='dark'?'white':'black',
+        backgroundColor: props.mode==='dark'?'#0a58ca':'white',
     }
+
   return (
-    <div className='container' style={mystyle}>
+    <div className='container'>
         <h1 className="my-3">About Us</h1>
         <div className="accordion" id="accordionExample" style={mystyle}>
                 <div className="accordion-item">
@@ -63,9 +69,9 @@ export default function About() {
                 </div>
             </div>
         </div>
-        <div className="container my-3">
+        {/* <div className="container my-3">
             <button onClick={darkMode} type="button" className="btn btn-primary my-2">{btnText}</button>
-        </div>
+        </div> */}
     </div>
   )
 }
